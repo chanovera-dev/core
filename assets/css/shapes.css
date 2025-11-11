@@ -1,8 +1,24 @@
+body {
+    min-height: 100dvh;
+}
+
 .block:has(.content) {
     & .content {
         width: var(--max-width--content);
         margin-inline: auto;
     }
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    height: auto;
 }
 
 .post {
