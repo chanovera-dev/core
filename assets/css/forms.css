@@ -1,0 +1,104 @@
+/*******************************************************************
+*   I N P U T S
+*******************************************************************/
+
+label:not([for="wp-comment-cookies-consent"]) {}
+
+input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not(.wp-block-search__input),
+textarea,
+select {
+    &:hover {}
+
+    &:focus {}
+
+    &:focus-visible {}
+
+    &::placeholder {}
+}
+
+select {}
+
+textarea {}
+
+/*******************************************************************
+*   B U T T O N S
+*******************************************************************/
+
+.btn,
+#submit,
+.wpcf7-submit {
+    &:has(svg) {
+        & svg {}
+    }
+
+    &:hover {}
+
+    &:focus {}
+
+    &:focus-visible {}
+
+    &.primary {}
+
+    &.secondary {}
+
+    &.outline {}
+
+    &.small {}
+
+    &.large {}
+
+    &.inactive {
+        &:hover {}
+    }
+}
+
+/*******************************************************************
+*   C H E C K B O X
+*******************************************************************/
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {}
+
+[type="checkbox"]:checked + label:after {}
+
+/* Disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {}
+
+[type="checkbox"]:disabled:checked + label:after {}
+
+[type="checkbox"]:disabled + label {}
+
+/* Accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {}
+
+/*******************************************************************
+*   OTHERS
+*******************************************************************/
+
+::-webkit-search-cancel-button {}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {}

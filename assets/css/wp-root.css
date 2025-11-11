@@ -1,0 +1,7 @@
+:root {
+    color-scheme: light dark;
+
+    /* sizes */
+    --heigh-wp-adminbar: 2.875rem;
+    --max-width--content: min(100% - 2.5rem, 1366px);
+}

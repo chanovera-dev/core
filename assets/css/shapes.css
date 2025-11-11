@@ -1,0 +1,64 @@
+.block:has(.content) {
+    & .content {
+        width: var(--max-width--content);
+        margin-inline: auto;
+    }
+}
+
+.post {
+    &:hover {}
+
+    & .post-body__header {}
+
+    & .post-body__content {}
+
+    & .post-body__footer {}
+}
+
+.tag {
+    &:hover {}
+
+    &:focus {}
+
+    &:focus-visible {}
+
+    &:active {}
+
+    & svg {}
+
+    &.small {
+        & svg {}
+    }
+}
+
+.social {
+    & .menu {
+        & li {
+            & a {
+                &:hover {}
+
+                &:focus {}
+                
+                &:focus-visible {}
+
+                &:active {}
+                
+                &::before {}
+            }
+        }
+    }
+}
+
+.btn-pagination {
+    &:hover {}
+
+    &:focus {}
+
+    &:focus-visible {}
+
+    & svg {}
+
+    &.small {
+        & svg {}
+    }
+}
