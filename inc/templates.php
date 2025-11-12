@@ -68,6 +68,7 @@ function core_get_assets() {
     return [
         'css' => [
             'page'               => "$assets_path/css/page.css",
+            'sidebar'            => "$assets_path/css/sidebar.css",
         ],
         'js' => [
             'slideshow-script'   => "$assets_path/js/slideshow.js",
@@ -93,6 +94,10 @@ function page_template() {
         $a = core_get_assets();
 
         core_enqueue_style( 'page', $a['css']['page'] );
+
+        if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) ) {
+            core_enqueue_style( 'sidebar', $a['css']['sidebar'] );
+        }
     }
 }
 add_action( 'wp_enqueue_scripts', 'page_template' );

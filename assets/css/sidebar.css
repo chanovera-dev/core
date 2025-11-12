@@ -1,0 +1,33 @@
+.site-main {
+    & :is(.type-page,.type-post):has(.block .content .sidebar) {
+        & .block {
+            & .content:has(aside) {
+                display: grid;
+                gap: 50px;
+
+                & .sidebar {
+                    & > *:not(:last-child) {
+                        margin-bottom: 50px;
+                    }
+
+                    & ul {
+                        padding-left: 0;
+                        list-style: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width >= 1024px) {
+    .site-main {
+        & :is(.type-page,.type-post):has(.block .content .sidebar) {
+            & .block {
+                & .content:has(aside) {
+                    grid-template-columns: 1fr auto;
+                }
+            }
+        }
+    }
+}

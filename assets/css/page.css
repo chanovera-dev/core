@@ -11,21 +11,3 @@ header.block {
         padding: 50px 0;
     }
 }
-
-@media (width >= 1024px) {
-    .site-main {
-        & .type-page:has(.block .content .sidebar) {
-            & .block {
-                & .content:has(aside) {
-                    display: grid;
-                    grid-template-columns: 1fr auto;
-                    gap: 50px;
-
-                    & > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-                        margin-left: 0;
-                    }
-                }
-            }
-        }
-    }
-}

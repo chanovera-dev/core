@@ -158,7 +158,7 @@ function widgets_areas() {
 
     register_sidebar(
         array(
-            'name'          => __( 'Posts sidebar', 'stories' ),
+            'name'          => __( 'Posts sidebar', 'core' ),
             'id'            => 'sidebar-1',
             'before_widget' => '',
             'after_widget'  => '',
@@ -167,7 +167,7 @@ function widgets_areas() {
 
     register_sidebar(
         array(
-            'name'          => __( 'Post sidebar', 'stories' ),
+            'name'          => __( 'Post sidebar', 'core' ),
             'id'            => 'sidebar-2',
             'before_widget' => '',
             'after_widget'  => '',
@@ -176,7 +176,7 @@ function widgets_areas() {
 
     register_sidebar(
         array(
-            'name'          => __( 'Page sidebar', 'stories' ),
+            'name'          => __( 'Page sidebar', 'core' ),
             'id'            => 'sidebar-3',
             'before_widget' => '',
             'after_widget'  => '',

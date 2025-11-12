@@ -1,7 +1,10 @@
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
     background-color: light-dark(var(--wp--preset--color--base), var(--wp--preset--color--contrast));
     color: light-dark(var(--wp--preset--color--contrast), var(--wp--preset--color--base));
+
 }
 
 .block:has(.content) {
