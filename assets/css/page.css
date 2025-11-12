@@ -1,8 +1,17 @@
 header.block {
     background-color: light-dark(var(--wp--preset--color--secondary), var(--secondary-dark));
+
     & .content {
         text-align: center;
         padding: 50px 0;
+
+        & .metadata {
+            & .date {
+                display: inline-flex;
+                align-items: center;
+                gap: .5rem;
+            }
+        }
     }
 }
 

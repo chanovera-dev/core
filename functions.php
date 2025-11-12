@@ -36,6 +36,7 @@ if ( ! defined( 'CORE_VERSION' ) ) {
  */
 $inc_files = array(
     'core'       => 'inc/core.php',
+    'widgets'    => 'inc/custom-widgets.php',
     'extended'   => 'inc/extended.php',
     'templates'  => 'inc/templates.php',
     'customizer' => 'inc/customizer.php',
