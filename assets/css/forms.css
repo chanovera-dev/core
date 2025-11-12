@@ -56,9 +56,10 @@ textarea {}
 }
 
 .wp-block-search__input {
+    background-color: light-dark(var(--wp--preset--color--base), var(--wp--preset--color--contrast));
     &:hover {
         border-color: var(--wp--preset--color--btn-lnk);
-        box-shadow: 0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
+        box-shadow: 0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-25);
     }
 
     &:focus-visible {
@@ -125,10 +126,10 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px var(--wp--preset--color--base) inset, 
+    box-shadow: 0 0 0px 1000px light-dark(var(--wp--preset--color--base), var(--wp--preset--color--contrast)) inset, 
                 0 0 0 1px var(--wp--preset--color--btn-lnk),
                 0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
-    -webkit-text-fill-color: var(--wp--preset--color--contrast);  
+    -webkit-text-fill-color: light-dark(var(--wp--preset--color--contrast), var(--wp--preset--color--base));  
     border-color: var(--wp--preset--color--btn-lnk);
     transition: border-color .3s ease-in-out;
 }

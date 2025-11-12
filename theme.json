@@ -19,7 +19,7 @@
 					"slug": "contrast"
 				},
 				{
-					"color": "#f9f9f9",
+					"color": "#f6f6f6",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
@@ -37,6 +37,11 @@
 					"color": "#4169e17e",
 					"name": "Button Link Alpha 50",
 					"slug": "btn-lnk-alpha-50"
+				},
+				{
+					"color": "#4169e140",
+					"name": "Button Link Alpha 25",
+					"slug": "btn-lnk-alpha-25"
 				}
 			]
 		},
