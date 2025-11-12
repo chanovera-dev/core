@@ -2,7 +2,10 @@
 *   I N P U T S
 *******************************************************************/
 
-label:not([for="wp-comment-cookies-consent"]) {}
+label:not([for="wp-comment-cookies-consent"]) {
+    font-size: var(--wp--preset--font-size--small);
+    font-weight: 400 !important;
+}
 
 input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]):not([type="range"]):not([type="color"]):not(.wp-block-search__input),
 textarea,
@@ -52,6 +55,24 @@ textarea {}
     }
 }
 
+.wp-block-search__input {
+    &:hover {
+        border-color: var(--wp--preset--color--btn-lnk);
+        box-shadow: 0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 1px var(--wp--preset--color--btn-lnk),
+                    0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
+    }
+}
+
+.wp-element-button {
+    transition: all .3s ease;
+    font-size: var(--wp--preset--font-size--small);
+}
+
 /*******************************************************************
 *   C H E C K B O X
 *******************************************************************/
@@ -89,10 +110,12 @@ textarea {}
 [type="checkbox"]:not(:checked):focus + label:before {}
 
 /*******************************************************************
-*   OTHERS
+*   O T H E R S
 *******************************************************************/
 
-::-webkit-search-cancel-button {}
+::-webkit-search-cancel-button {
+    display: none;
+}
 
 
 input[type=number]::-webkit-inner-spin-button,
@@ -101,4 +124,27 @@ input[type=number]::-webkit-outer-spin-button {}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-textarea:-webkit-autofill {}
+textarea:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px var(--wp--preset--color--base) inset, 
+                0 0 0 1px var(--wp--preset--color--btn-lnk),
+                0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
+    -webkit-text-fill-color: var(--wp--preset--color--contrast);  
+    border-color: var(--wp--preset--color--btn-lnk);
+    transition: border-color .3s ease-in-out;
+}
+
+/*******************************************************************
+*   C H R O M I U M   B A S E D
+*******************************************************************/
+
+body.is-chromium {
+    & .wp-block-search__input {
+        border-radius: 1rem;
+        corner-shape: squircle;
+    }
+
+    & .wp-element-button {
+        border-radius: 1rem;
+        corner-shape: squircle;
+    }
+}
