@@ -1,25 +1,21 @@
+header.block {
+    & .content {
+        text-align: center;
+        padding: 50px 0;
+    }
+}
+
 @media (width >= 1024px) {
     .site-main {
         & .type-page:has(.block .content .sidebar) {
             & .block {
-                & .content {
+                & .content:has(aside) {
                     display: grid;
                     grid-template-columns: 1fr auto;
                     gap: 50px;
 
-                    & .entry-header {
-                        grid-column: 1 / 3;
-                        grid-row: 1 / 2;
-                    }
-
-                    & .entry-content {
-                        grid-column: 1 / 2;
-                        grid-row: 2 / 3;
-                    }
-
-                    & .sidebar {
-                        grid-column: 2 / 3;
-                        grid-row: 2 / 3;
+                    & > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+                        margin-left: 0;
                     }
                 }
             }

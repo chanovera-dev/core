@@ -12,11 +12,18 @@
 
 <main id="main" class="site-main" role="main">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <header class="block entry-header">
+            <div class="content">
+                <?php 
+                    the_title( '<h1 class="entry-title">', '</h1>' ); 
+                    if ( get_the_modified_time('d/m/Y') ) {
+                        echo '<p class="latest-modified">' . esc_html__( 'Este archivo fue modificado por última vez el ', 'core' ) . get_the_modified_time('j \d\e F \d\e Y') . '</p>';
+                    }
+                ?>
+            </div>
+        </header><!-- .entry-header -->
         <div class="block">
             <div class="content">
-                <header class="entry-header">
-                    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                </header><!-- .entry-header -->
                 <div class="entry-content is-layout-constrained">
                     <?php
                         the_content();
