@@ -68,7 +68,9 @@ function core_get_assets() {
     return [
         'css' => [
             'page'               => "$assets_path/css/page.css",
+            'single'             => "$assets_path/css/single.css",
             'sidebar'            => "$assets_path/css/sidebar.css",
+            'comments'           => "$assets_path/css/comments.css",
         ],
         'js' => [
             'slideshow-script'   => "$assets_path/js/slideshow.js",
@@ -97,6 +99,14 @@ function page_template() {
 
         if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) ) {
             core_enqueue_style( 'sidebar', $a['css']['sidebar'] );
+        }
+
+        if ( is_single() ) {
+            core_enqueue_style( 'single', $a['css']['single'] );
+
+            if ( comments_open() ) {
+                core_enqueue_style( 'custom-comments', $a['css']['comments'] );
+            }
         }
     }
 }

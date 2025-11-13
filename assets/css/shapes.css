@@ -37,13 +37,28 @@ img {
 }
 
 .tag {
-    &:hover {}
+    padding: 0 1rem;
+    border: 1px solid var(--wp--preset--color--accent-6);
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    border-radius: .5rem;
+    transition: border-color .3s ease, box-shadow .3s ease, transform .15s ease;
+
+    &:hover {
+        border-color: var(--wp--preset--color--btn-lnk);
+        box-shadow: 0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-25);
+    }
 
     &:focus {}
 
     &:focus-visible {}
 
-    &:active {}
+    &:active {
+        transform: translateY(1px);
+        box-shadow: 0 0 0 1px var(--wp--preset--color--btn-lnk),
+                    0 0 0 .2rem var(--wp--preset--color--btn-lnk-alpha-50);
+    }
 
     & svg {}
 
@@ -81,5 +96,12 @@ img {
 
     &.small {
         & svg {}
+    }
+}
+
+body.is-chromium {
+    & .tag {
+        border-radius: 1rem;
+        corner-shape: squircle;
     }
 }
