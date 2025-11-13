@@ -14,9 +14,19 @@
 					"slug": "base"
 				},
 				{
+					"color": "#ffffff7e",
+					"name": "Base Alpha 50",
+					"slug": "base-alpha-50"
+				},
+				{
 					"color": "#000000",
 					"name": "Contrast",
 					"slug": "contrast"
+				},
+				{
+					"color": "#0000007e",
+					"name": "Contrast Alpha 50",
+					"slug": "contrast-alpha-50"
 				},
 				{
 					"color": "#f6f6f6",

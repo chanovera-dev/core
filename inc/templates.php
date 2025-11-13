@@ -67,6 +67,11 @@ function core_get_assets() {
 
     return [
         'css' => [
+            'breadcrumbs'        => "$assets_path/css/breadcrumbs.css",
+
+            'posts'              => "$assets_path/css/posts.css",
+            'pagination'         => "$assets_path/css/pagination.css",
+            
             'page'               => "$assets_path/css/page.css",
             'single'             => "$assets_path/css/single.css",
             'sidebar'            => "$assets_path/css/sidebar.css",
@@ -111,3 +116,28 @@ function page_template() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'page_template' );
+
+/**
+ * Enqueues styles and scripts for post listings pages.
+ *
+ * Loads specific CSS and JS assets for the blog home, archives, 
+ * and search results pages. Includes pagination styles only 
+ * when pagination links are present.
+ *
+ * @since 2.0.0
+ * @return void
+ */
+function posts_styles() {
+    if ( is_home() || is_archive() || is_search() ) {
+        $a = core_get_assets();
+        
+        core_enqueue_style( 'breadcrumbs', $a['css']['breadcrumbs'] );
+        core_enqueue_style( 'posts', $a['css']['posts'] );
+        core_enqueue_style( 'pagination', $a['css']['pagination'] );
+
+        if ( is_active_sidebar( 'sidebar-1' ) ) {
+            core_enqueue_style( 'sidebar', $a['css']['sidebar'] );
+        }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'posts_styles' );
