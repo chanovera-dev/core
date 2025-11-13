@@ -95,6 +95,19 @@
             }
         }
     }
+
+    & .block {
+        &.container--related-posts {
+            background-color: light-dark(var(--wp--preset--color--secondary), var(--secondary-dark));
+            display: grid;
+            gap: 2rem;
+            padding: 3rem 0;
+
+            & .content.related-posts--title {
+                text-align: center;
+            }
+        }
+    }
 }
 
 body.is-chromium {

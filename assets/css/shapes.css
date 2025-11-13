@@ -279,16 +279,53 @@ img {
 }
 
 .btn-pagination {
-    &:hover {}
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: grid;
+    place-content: center;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 1rem;
+    position: relative;
+    transition: background-color .3s ease;
+    background-color: transparent;
 
-    &:focus {}
+    &.small-pagination {
+        width: 46px;
+        height: 46px;
+        border-radius: .5rem;
 
-    &:focus-visible {}
+        & svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
 
-    & svg {}
+    &:hover {
+        cursor: pointer;
+        background-color: var(--wp--preset--color--btn-lnk-alpha-25);
+    }
 
-    &.small {
-        & svg {}
+    & svg {
+        transition: fill .3s ease;
+        fill: light-dark(var(--wp--preset--color--contrast), var(--wp--preset--color--base));
+    }
+
+    &:focus-visible {
+        outline: none;
+        background-color: orangered;
+
+        & svg {
+            fill: var(--wp--preset--color--base);
+        }
+    }
+
+    &:active {
+        transform: translateY(1px);
     }
 }
 
@@ -326,6 +363,7 @@ body.is-chromium {
         }
     }
 
+    & .btn-pagination,
     & .tag {
         border-radius: 1rem;
         corner-shape: squircle;

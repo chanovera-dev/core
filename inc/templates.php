@@ -75,10 +75,11 @@ function core_get_assets() {
             'page'               => "$assets_path/css/page.css",
             'single'             => "$assets_path/css/single.css",
             'sidebar'            => "$assets_path/css/sidebar.css",
+            'related-css'        => "$assets_path/css/related-slideshow.css",
             'comments'           => "$assets_path/css/comments.css",
         ],
         'js' => [
-            'slideshow-script'   => "$assets_path/js/slideshow.js",
+            'related-script'     => "$assets_path/js/related-slideshow.js",
         ]
     ];
 }
@@ -112,6 +113,9 @@ function page_template() {
             if ( comments_open() ) {
                 core_enqueue_style( 'custom-comments', $a['css']['comments'] );
             }
+
+            core_enqueue_style( 'related-css', $a['css']['related-css'] );
+            core_enqueue_script( 'related-script', $a['js']['related-script'] );
         }
     }
 }
